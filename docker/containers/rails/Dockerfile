@@ -1,4 +1,5 @@
 FROM ruby:2.5.1
+RUN echo "deb http://archive.debian.org/debian stretch main contrib non-free" > /etc/apt/sources.list
 RUN apt-get update -qq && apt-get install -y build-essential default-libmysqlclient-dev nodejs
 
 COPY docker-entrypoint.sh /usr/local/bin/
